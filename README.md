@@ -1,46 +1,34 @@
-# Astro Starter Kit: Basics
+A website I made for my small 21+ gaming/social community. Built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
 
-```sh
-npm create astro@latest -- --template basics
+The website features a landing page, servers, rules, and more! Check it out [here](https://notserious.net)!
+
+![Landing Page](./images/landing.png)
+
+## Building
+Firstly, clone the repository and install the dependencies:
+
+```bash
+# Clone the repository
+git clone https://github.com/seriously-not-serious/website
+
+# Change into the website directory
+cd website
+
+# Install dependencies
+npm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Next, you may run the development server:
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```bash
+npm astro dev
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+To build the website for production, run:
 
-## 🧞 Commands
+```bash
+npm astro build
+```
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Credits
+* [Christian Deacon](https://github.com/gamemann)
