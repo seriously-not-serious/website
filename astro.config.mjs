@@ -46,5 +46,7 @@ export default defineConfig({
     }
 }],
 
-  integrations: [react(), starlight()]
+  integrations: [react(), starlight({
+    title: "Seriously not Serious",
+  })]
 });
