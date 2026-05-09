@@ -19,6 +19,7 @@ export default defineConfig({
     allowedHosts: ['x-dev2']
   },
 
+  output: "server",
   adapter: node({
     mode: 'standalone'
   }),
