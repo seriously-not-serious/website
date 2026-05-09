@@ -101,10 +101,11 @@ const {
 	<body>
 		<ObserverProvider client:load>
 			<main
-				class="bg-linear-to-b from-gray-900 to-gray-950 text-gray-200 min-h-screen overflow-x-hidden px-1 sm:px-0"
+				class="bg-linear-to-b from-gray-900 to-gray-950 text-gray-200 min-h-screen overflow-x-hidden px-1 sm:px-0 flex flex-col"
 			>
 				<Header pageType={pageType} />
 				<slot />
+				<div class="grow"></div>
 				<Footer />
 			</main>
 		</ObserverProvider>
