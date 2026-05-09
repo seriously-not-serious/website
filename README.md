@@ -21,13 +21,13 @@ npm install
 Next, you may run the development server:
 
 ```bash
-npm astro dev
+npx astro dev
 ```
 
 To build the website for production, run:
 
 ```bash
-npm astro build
+npx astro build
 ```
 
 ## Credits
