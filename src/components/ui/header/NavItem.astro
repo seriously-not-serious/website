@@ -1,0 +1,14 @@
+---
+type Props = {
+    url: string
+    isActive?: boolean
+}
+
+const { url, isActive } = Astro.props as Props;
+---
+
+<li>
+    <a href={url} class={`font-inter duration-150 ${isActive ? 'text-gray-50 font-bold' : 'text-gray-200 hover:text-gray-100'}`}>
+        <slot />
+    </a>
+</li>

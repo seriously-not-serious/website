@@ -12,6 +12,26 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.2.2"
+    "@astrojs/node": "^10.0.6",
+    "@astrojs/react": "^5.0.4",
+    "@astrojs/starlight": "^0.39.2",
+    "@tailwindcss/vite": "^4.2.4",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "astro": "^6.2.2",
+    "iron-session": "^8.0.4",
+    "openid": "^2.0.15",
+    "pg": "^8.20.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "tailwindcss": "^4.2.4",
+    "tailwindcss-intersect": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.20.0",
+    "tailwindcss-motion": "^1.1.1"
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }

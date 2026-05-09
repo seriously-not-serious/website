@@ -1,0 +1,23 @@
+---
+type Props = {
+    question: string;
+};
+
+const { question } = Astro.props as Props;
+
+import { Icon } from "@astrojs/starlight/components";
+---
+
+<div
+    class="p-4 bg-gray-800 rounded-lg flex flex-col gap-2 ring-1 ring-gray-900 hover:ring-gray-700 duration-300 hover:shadow-black"
+>
+    <div class="flex items-center gap-2">
+        <Icon name="star" size="24px" />
+        <h3 class="font-outfit text-lg font-bold text-white">
+            {question}
+        </h3>
+    </div>
+    <div>
+        <slot />
+    </div>
+</div>

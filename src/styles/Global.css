@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@import "tailwindcss-intersect";
+
+@plugin "tailwindcss-motion";
+
+@import "./Base.css";
+
+@theme {
+    --font-inter: var(--font-inter);
+    --font-outfit: var(--font-outfit);
+
+    --breakpoint-xs: 475px;
+}

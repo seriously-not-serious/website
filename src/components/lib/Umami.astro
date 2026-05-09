@@ -1,0 +1,34 @@
+---
+type Props = {
+    src: string
+    websiteId: string
+    setOutboundClicks?: boolean
+}
+
+const {
+    src,
+    websiteId,
+    setOutboundClicks = true
+} = Astro.props as Props
+---
+
+<script
+    defer
+    src={src}
+    data-website-id={websiteId}
+/>
+{setOutboundClicks && (
+    <script>
+        (() => {
+            const name = 'outbound-link-click';
+
+            document.querySelectorAll('a').forEach(a => {
+
+                if (a.host !== window.location.host && !a.getAttribute('data-umami-event')) {
+                    a.setAttribute('data-umami-event', name);
+                    a.setAttribute('data-umami-event-url', a.href);
+                }
+            })
+        })()
+    </script>
+)}

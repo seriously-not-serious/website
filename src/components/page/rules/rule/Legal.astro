@@ -1,0 +1,28 @@
+---
+import Card from "../../../ui/Card.astro";
+
+import { Icon } from "@astrojs/starlight/components";
+---
+
+<Card className="motion-preset-blur-up">
+    <div class="flex items-center gap-2">
+        <Icon name="pen" size="24px" color="#FFFFFF" />
+        <h3 class="font-bold text-gray-50 text-lg">The Legal Stuff</h3>
+    </div>
+    <ul class="list-disc list-inside">
+        <li>
+            <span class="font-bold">Follow Discord ToS</span>: We strictly
+            adhere to <a href="https://discord.com/terms" target="_blank"
+                >Discord{"'"}s Terms of Service</a
+            > and <a href="https://discord.com/guidelines" target="_blank"
+                >Community Guidelines</a
+            >.
+        </li>
+        <li>
+            <span class="font-bold">21+ Age Requirement</span>: This is an
+            adult-only space. By being here, you verify you are at least 21
+            years old. If you are found to be underage, you will be asked to
+            leave and if you do not comply, you will be kicked or banned.
+        </li>
+    </ul>
+</Card>

@@ -1,23 +1,114 @@
+---
+import "../styles/Global.css";
+
+import ObserverProvider from "../components/lib/Observer";
+
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+import UmamiAnalytics from "../components/lib/Umami.astro";
+
+import { Font } from "astro:assets";
+
+type Props = {
+	meta?: {
+		title?: string;
+		titleMain?: string;
+
+		description?: string;
+		url?: string;
+
+		socialMediaImg?: string;
+		umamiSrc?: string;
+		umamiWebsiteId?: string;
+	};
+	pageType?: PageType;
+};
+
+type PageType = "home" | "servers" | "rules";
+
+const props = Astro.props as Props;
+
+const { meta, pageType = "home" } = props ?? {};
+
+const {
+	title,
+	titleMain,
+	url,
+	socialMediaImg,
+	umamiSrc,
+	umamiWebsiteId,
+	description: descRaw,
+} = meta ?? {};
+
+const description =
+	descRaw ??
+	`Seriously not Serious (21+) is an adults-only community that offers a safe and SFW space for adults to connect and make friends. We host a variety of events, including game nights, movie nights, and more, all designed to foster a welcoming and inclusive environment for our members. We also host vanilla and modded game servers in Minecraft, Ark, Garry's Mod, 7 Days to Die, and more! Join us today and become a part of our laid-back community!`;
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
+
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+
+		<title>{titleMain ?? "Seriously not Serious (21+) Community"}</title>
+		<meta name="description" content={description} />
+
+		<!-- Open Graph -->
+		<meta property="og:site_name" content={title} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		{
+			url && socialMediaImg && (
+				<meta property="og:image" content={url + socialMediaImg} />
+			)
+		}
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="675" />
+		<meta property="og:url" content={url} />
+		<meta property="og:type" content="website" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+
+		{
+			url && socialMediaImg && (
+				<meta name="twitter:image" content={url + socialMediaImg} />
+			)
+		}
+		<meta name="twitter:url" content={url} />
+		<meta name="twitter:site" content="@modcommunity_" />
+
+		{
+			umamiSrc && umamiWebsiteId && (
+				<UmamiAnalytics
+					src={umamiSrc}
+					websiteId={umamiWebsiteId}
+					setOutboundClicks={true}
+				/>
+			)
+		}
+
+		<Font cssVariable="--font-outfit" preload />
+		<Font cssVariable="--font-inter" preload />
 	</head>
 	<body>
-		<slot />
+		<ObserverProvider client:load>
+			<main
+				class="bg-linear-to-b from-gray-900 to-gray-950 text-gray-200 min-h-screen overflow-x-hidden px-1 sm:px-0"
+			>
+				<Header pageType={pageType} />
+				<slot />
+				<Footer />
+			</main>
+		</ObserverProvider>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

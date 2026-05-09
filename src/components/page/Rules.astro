@@ -1,0 +1,16 @@
+---
+import Header from "./rules/Header.astro";
+
+import Legal from "./rules/rule/Legal.astro";
+import Environment from "./rules/rule/Environment.astro";
+import Content from "./rules/rule/Content.astro";
+---
+
+<section class="flex flex-col gap-4 container mx-auto">
+    <Header />
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Legal />
+        <Environment />
+        <Content />
+    </div>
+</section>

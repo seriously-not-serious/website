@@ -1,0 +1,40 @@
+---
+import Card from "../../../ui/Card.astro";
+
+import { Icon } from "@astrojs/starlight/components";
+---
+
+<Card className="motion-preset-blur-up">
+    <div class="flex items-center gap-2">
+        <Icon name="pen" size="24px" color="#FFFFFF" />
+        <h3 class="font-bold text-gray-50 text-lg">Content & Respect</h3>
+    </div>
+    <ul class="list-disc list-inside">
+        <li>
+            <span class="font-bold">Don't be an Asshole</span>: Harassment, hate
+            speech, or targeted bullying will result in an immediate exit. Treat
+            others with the same respect you'd give a peer at a local lounge.
+            Use common sense.
+        </li>
+        <li>
+            <span class="font-bold">No Politics or Religion</span>: To keep
+            things laid-back, we avoid these loaded topics unless if it is a
+            HUGE event or a mod permits it.
+        </li>
+        <li>
+            <span class="font-bold">Don’t DM without Permission</span>: Please
+            respect the privacy of other members. Don't slide into DMs unless
+            you’ve cleared it in a public channel first.
+        </li>
+        <li>
+            <span class="font-bold">Read the Room</span>: If a topic seems to be
+            making people uncomfortable, it’s best to steer the conversation
+            elsewhere.
+        </li>
+    </ul>
+    <p class="text-sm text-gray-200">
+        We encourage communication as long as it's respectful and considerate.
+        If you have an issue, please address it calmly and privately with the
+        involved parties or an admin.
+    </p>
+</Card>

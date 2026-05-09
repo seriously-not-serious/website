@@ -1,0 +1,32 @@
+---
+import Card from "../../../ui/Card.astro";
+
+import { Icon } from "@astrojs/starlight/components";
+---
+
+<Card className="motion-preset-blur-up">
+    <div class="flex items-center gap-2">
+        <Icon name="sun" size="24px" color="#FFFFFF" />
+        <h3 class="font-bold text-gray-50 text-lg">
+            The Environment (<span class="italic">Mostly SFW</span>)
+        </h3>
+    </div>
+    <ul class="list-disc list-inside">
+        <li>
+            <span class="font-bold">Keep it SFW</span>: This is a SFW server. No
+            pornographic content, gore, or extreme NSFW imagery.
+        </li>
+        <li>
+            <span class="font-bold">The "Bar Atmosphere" Rule</span>: We are all
+            adults; spicy jokes and "locker room talk" are fine in moderation,
+            but keep it tasteful. If an admin asks you to tone it down, <span
+                class="font-bold">please respect that</span
+            >.
+        </li>
+        <li>
+            <span class="font-bold">No Drama</span>: We{"'"}re here to relax and
+            rewind. Avoid bringing outside beef into the server or intentionally
+            stirring the pot.
+        </li>
+    </ul>
+</Card>

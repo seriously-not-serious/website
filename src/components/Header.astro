@@ -1,0 +1,61 @@
+---
+import NavItem from "../components/ui/header/NavItem.astro";
+
+import BtnPrimary from "../components/ui/button/Primary.astro";
+
+type Props = {
+    pageType: "home" | "servers" | "rules";
+};
+
+const { pageType } = Astro.props as Props;
+
+import { Icon } from "@astrojs/starlight/components";
+---
+
+<header>
+    <nav class="container mx-auto flex items-center py-4 justify-between">
+        <div class="flex gap-3 lg:gap-12">
+            <div class="flex items-center gap-2">
+                <div class="shrink-0 w-16 md:w-24">
+                    <a href="/">
+                        <img
+                            src="/image/icon.png"
+                            alt="icon"
+                            class="w-full h-full"
+                        />
+                    </a>
+                </div>
+                <div
+                    class="font-outfit text-xl sm:text-2xl lg:text-3xl font-bold text-white"
+                >
+                    <span class="hidden sm:inline">Seriously not Serious</span>
+                    <span class="inline sm:hidden">SnS</span>
+                </div>
+            </div>
+            <ul class="flex space-x-4 items-center">
+                <NavItem url="/" isActive={pageType === "home"}>Home</NavItem>
+                <NavItem url="/servers" isActive={pageType === "servers"}
+                    >Servers</NavItem
+                >
+                <NavItem url="/rules" isActive={pageType === "rules"}
+                    >Rules</NavItem
+                >
+            </ul>
+        </div>
+
+        <div class="flex gap-2 items-center">
+            <BtnPrimary url="https://dis.notserious.net" newTab={true}>
+                <div class="flex items-center gap-2">
+                    <Icon name="discord" />
+                    <span class="hidden md:inline">Join Discord</span>
+                </div>
+            </BtnPrimary>
+            <BtnPrimary disabled={true} url="/connect">
+                <div class="flex items-center gap-2">
+                    <Icon name="sketch" />
+                    <span class="hidden md:inline">Connect</span>
+                </div>
+            </BtnPrimary>
+        </div>
+    </nav>
+</header>
