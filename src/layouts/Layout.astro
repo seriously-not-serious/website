@@ -21,8 +21,6 @@ type Props = {
 		url?: string;
 
 		socialMediaImg?: string;
-		umamiSrc?: string;
-		umamiWebsiteId?: string;
 	};
 	pageType?: PageType;
 };
@@ -33,14 +31,16 @@ const props = Astro.props as Props;
 
 const { meta, pageType = "home" } = props ?? {};
 
+const umamiSrc: string | undefined = import.meta.env.PUBLIC_UMAMI_SRC;
+const umamiWebsiteId: string | undefined = import.meta.env
+	.PUBLIC_UMAMI_WEBSITE_ID;
+
 const {
 	name = "Seriously not Serious (21+)",
 	title = "Seriously not Serious (21+) Community",
 	titleMain = "Seriously not Serious (21+)",
 	url = "https://notserious.net",
 	socialMediaImg = "/image/landing/hero.png",
-	umamiSrc,
-	umamiWebsiteId,
 	description = `We are an adults-only community (21+) that offers a safe and SFW space for adults to connect and make friends. We host a variety of events, including game nights, parrty nights, and more, all designed to foster a welcoming and inclusive environment for our members. We also host vanilla and modded game servers in Minecraft, Ark, Garry's Mod, 7 Days to Die, and more! Join us today and become a part of our laid-back community!`,
 } = meta ?? {};
 ---
